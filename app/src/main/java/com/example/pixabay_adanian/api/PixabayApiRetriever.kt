@@ -18,5 +18,5 @@ class PixabayApiRetriever {
         service = retrofit.create(PixabayService::class.java)
     }
 
-    suspend fun retrieveSearchResults() = service.searchResults("24793770-af8b352b7a57d7870bd091393", "dog")
+    suspend fun retrieveSearchResults(search: String) = service.searchResults("24793770-af8b352b7a57d7870bd091393", search)
 }
