@@ -13,7 +13,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.pixabay_adanian.R
 import com.example.pixabay_adanian.models.Hit
 
-class PixaBayAdapter(private val images: List<Hit>) : RecyclerView.Adapter<PixaBayAdapter.MyViewHolder>() {
+class PixaBayAdapter(private var images: List<Hit>) : RecyclerView.Adapter<PixaBayAdapter.MyViewHolder>() {
     private val adanianImage = "https://static.wixstatic.com/media/097f77_3f22812242f64acea91972fc17343420~mv2.jpg/v1/fill/w_2500,h_2500,al_c/097f77_3f22812242f64acea91972fc17343420~mv2.jpg"
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -43,5 +43,9 @@ class PixaBayAdapter(private val images: List<Hit>) : RecyclerView.Adapter<PixaB
 
     override fun getItemCount(): Int {
         return images.size
+    }
+
+    fun changeDataSet(searchData : List<Hit>){
+        images = searchData
     }
 }
