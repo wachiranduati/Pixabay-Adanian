@@ -1,5 +1,8 @@
 package com.example.pixabay_adanian.models
 
+import android.os.Parcelable
+
+@Parcelize
 data class Hit(
     val collections: Int,
     val comments: Int,
@@ -23,4 +26,4 @@ data class Hit(
     val webformatHeight: Int,
     val webformatURL: String,
     val webformatWidth: Int
-)
+) : Parcelable
