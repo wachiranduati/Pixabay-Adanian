@@ -31,19 +31,18 @@ class MainScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recyclMain : RecyclerView = view.findViewById(R.id.mainRecyclerView)
-        val adp = PixaBayAdapter(listOf("1","2","3","4","5","6","7","8","9","10"))
-        val lytmng = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
-        recyclMain.apply {
-            adapter = adp
-            setHasFixedSize(true)
-            layoutManager = lytmng
-        }
-        Timber.d("logging into to coroutine")
         GlobalScope.launch(Dispatchers.IO) {
             val call = PixabayApiRetriever().retrieveSearchResults()
-            Timber.d("data retrieved is ${call.hits}")
+            //todo handle network call issues i.e server error or app offline
             GlobalScope.launch(Dispatchers.Main) {
-                Toast.makeText(activity, "data retreived ${call.total}", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(activity, "data retreived ${call.total}", Toast.LENGTH_SHORT).show()
+                val adp = PixaBayAdapter(call.hits)
+                val lytmng = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
+                recyclMain.apply {
+                    adapter = adp
+                    setHasFixedSize(true)
+                    layoutManager = lytmng
+                }
             }
         }
     }
