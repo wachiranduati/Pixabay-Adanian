@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -32,6 +34,11 @@ class PixaBayAdapter(private val images: List<Hit>) : RecyclerView.Adapter<PixaB
             .error(adanianImage)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.imagePlaceHolder)
+        //implemented the diskcachestrategy to ensure all the images are saved to disk especially seeing as the dog result is on by default
+        val bundle = bundleOf("Hit" to images[position])
+        holder.imagePlaceHolder.setOnClickListener {
+            it.findNavController().navigate(R.id.action_mainScreenFragment_to_imageDetailsFragment, bundle)
+        }
     }
 
     override fun getItemCount(): Int {

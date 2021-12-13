@@ -9,5 +9,18 @@
         android:id="@+id/mainScreenFragment"
         android:name="com.example.pixabay_adanian.ui.MainScreenFragment"
         android:label="fragment_main_screen"
-        tools:layout="@layout/fragment_main_screen" />
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_mainScreenFragment_to_imageDetailsFragment"
+            app:destination="@id/imageDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageDetailsFragment"
+        android:name="com.example.pixabay_adanian.ui.ImageDetailsFragment"
+        android:label="Image Info"
+        tools:layout="@layout/fragment_image_details" >
+        <argument
+            android:name="Hit"
+            app:argType="com.example.pixabay_adanian.models.Hit" />
+    </fragment>
 </navigation>
