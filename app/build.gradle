@@ -50,4 +50,7 @@ dependencies {
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.6.3'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.3'
+
+    //Timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 }
