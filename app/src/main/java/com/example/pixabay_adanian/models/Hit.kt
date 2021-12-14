@@ -1,14 +1,19 @@
 package com.example.pixabay_adanian.models
 
 import android.os.Parcelable
+import androidx.room.Dao
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
-
+@Entity(tableName = "pixabay_table")
 @Parcelize
 data class Hit(
     val collections: Int,
     val comments: Int,
     val downloads: Int,
+    @PrimaryKey
     val id: Int,
     val imageHeight: Int,
     val imageSize: Int,
@@ -28,4 +33,6 @@ data class Hit(
     val webformatHeight: Int,
     val webformatURL: String,
     val webformatWidth: Int
-) : Parcelable
+) : Parcelable{
+    var searchkey = ""
+}

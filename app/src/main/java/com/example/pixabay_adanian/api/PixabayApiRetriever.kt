@@ -1,5 +1,7 @@
 package com.example.pixabay_adanian.api
 
+import com.example.pixabay_adanian.models.PixaResponse
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -18,5 +20,5 @@ class PixabayApiRetriever {
         service = retrofit.create(PixabayService::class.java)
     }
 
-    suspend fun retrieveSearchResults(search: String) = service.searchResults("24793770-af8b352b7a57d7870bd091393", search)
+    fun retrieveSearchResults(search: String) : Call<PixaResponse> = service.searchResults("24793770-af8b352b7a57d7870bd091393", search)
 }
