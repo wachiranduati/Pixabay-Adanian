@@ -19,3 +19,9 @@ complete the above named tasks while consuming the (pixabay api)[https://pixabay
 
 ### Screenshots
 I've added screenshots to the root folder under a `screenshots` directory.
+
+![default loading](https://github.com/wachiranduati/Pixabay-Adanian/blob/dev/screenshots/default.jpg)
+![info screen](https://github.com/wachiranduati/Pixabay-Adanian/blob/dev/screenshots/info.jpg)
+![no internet launch](https://github.com/wachiranduati/Pixabay-Adanian/blob/dev/screenshots/no-internet-launch.jpg)
+![no internet search](https://github.com/wachiranduati/Pixabay-Adanian/blob/dev/screenshots/no-internet-search.jpg)
+![search results](https://github.com/wachiranduati/Pixabay-Adanian/blob/dev/screenshots/search.jpg)
