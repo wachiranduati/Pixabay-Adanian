@@ -34,5 +34,5 @@ data class Hit(
     val webformatURL: String,
     val webformatWidth: Int
 ) : Parcelable{
-    val searchkey = ""
+    var searchkey = ""
 }
